@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import { VehicleQuery, VehicleType } from '../types/vehicle'
+import { NewVehicle, VehicleQuery, VehicleType } from '../types/vehicle'
 
 const baseUrl = "http://localhost:8080/api/v1"
 
@@ -31,7 +31,7 @@ export const api = createApi({
       query: (id) => `/vehicles/${id}`,
       providesTags: (result, error, id) => [{ type: 'Vehicles', id }],
     }),
-    addVehicle: build.mutation<VehicleType, VehicleType>({
+    addVehicle: build.mutation<VehicleType, NewVehicle>({
       query(body) {
         return {
           url: `/vehicles`,

@@ -5,8 +5,6 @@ export interface VehicleType {
   id: number;
 }
 
-export interface VehicleQuery {
-  year?: number;
-  make?: string;
-  model?: string;
-}
+export type NewVehicle = Omit<VehicleType, 'id'>
+
+export type VehicleQuery = Partial<VehicleType>

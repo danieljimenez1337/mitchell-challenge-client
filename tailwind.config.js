@@ -6,6 +6,9 @@ module.exports = {
       under: "inset 0px -1px 0px #E7E9EC"
     },
     extend: {
+      colors: {
+        trasparentGray: "#34445C66",
+      }
     },
   },
   variants: {
