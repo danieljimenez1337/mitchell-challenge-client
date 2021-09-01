@@ -1,5 +1,5 @@
 import React from "react";
-import Vehicle from "./Vehicle";
+import Vehicle from "./vehicle/Vehicle";
 import { useGetVehiclesQuery } from "../../services/api";
 
 const Vehicles = () => {
@@ -11,8 +11,10 @@ const Vehicles = () => {
 
   if (data){
     return (
-      <div className="flex max-w-5xl flex-wrap gap-4 p-4 container mx-auto">
-        {data.map((vehicle) => <Vehicle vehicle={vehicle}/>)}
+      <div className="container mx-auto py-4 px-2">
+        <div className="flex flex-wrap gap-4 py-4">
+          {data.map((vehicle) => <Vehicle vehicle={vehicle} key={vehicle.id}/>)}
+        </div>
       </div>
     )
   }
