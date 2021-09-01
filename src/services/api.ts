@@ -8,6 +8,7 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl
   }),
+  //tags are used to invalidate queries
   tagTypes: ['Vehicles'],
   endpoints: (build) => ({
     getVehicles: build.query<VehicleType[], VehicleQuery>({
@@ -27,7 +28,7 @@ export const api = createApi({
           : 
             [{ type: 'Vehicles', id: 'LIST' }],
     }),
-    getVehiclesById: build.query<VehicleType[], number>({
+    getVehiclesById: build.query<VehicleType, number>({
       query: (id) => `/vehicles/${id}`,
       providesTags: (result, error, id) => [{ type: 'Vehicles', id }],
     }),
@@ -67,5 +68,6 @@ export const {
   useGetVehiclesQuery,
   useAddVehicleMutation,
   useDeletePostMutation,
-  useUpdateVehicleMutation 
+  useUpdateVehicleMutation,
+  useGetVehiclesByIdQuery 
 } = api
