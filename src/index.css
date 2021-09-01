@@ -7,3 +7,13 @@
 * {
   font-family: 'DM Sans', sans-serif;
 }
+
+.stack{
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#root, body, html{
+  width: 100%;
+  height: 100%;
+}

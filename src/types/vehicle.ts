@@ -4,3 +4,9 @@ export interface VehicleType {
   model: string;
   id: number;
 }
+
+export interface VehicleQuery {
+  year?: number;
+  make?: string;
+  model?: string;
+}
