@@ -12,7 +12,7 @@ const Vehicles = () => {
   if (data){
     return (
       <div className="container mx-auto py-4 px-2">
-        <div className="flex flex-wrap gap-4 py-4">
+        <div className="flex flex-wrap justify-center gap-4 py-4">
           {data.map((vehicle) => <Vehicle vehicle={vehicle} key={vehicle.id}/>)}
         </div>
       </div>
